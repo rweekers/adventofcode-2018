@@ -1,5 +1,12 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.2.51'
+    id "io.spring.dependency-management" version "1.0.6.RELEASE"
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "io.projectreactor:reactor-bom:Bismuth-RELEASE"
+    }
 }
 
 group 'nl.orangeflamingo'
@@ -11,6 +18,7 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile 'io.projectreactor:reactor-core'
     testCompile 'org.assertj:assertj-core:3.8.0'
     testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.2'
     testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.0.2'
