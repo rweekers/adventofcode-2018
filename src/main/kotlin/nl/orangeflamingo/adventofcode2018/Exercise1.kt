@@ -22,11 +22,8 @@ class Exercise1(input: String) {
                         frequencies.add(currentFreq)
                     }
         }
-        return 0
     }
-
 }
-
 
 fun main(args: Array<String>) {
     val exc1 = Exercise1("/input1.txt")
