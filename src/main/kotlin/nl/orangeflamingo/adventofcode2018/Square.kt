@@ -1,8 +1,8 @@
 package nl.orangeflamingo.adventofcode2018
 
-class Square(width: Int, height: Int) {
+class Square(height: Int, width: Int) {
 
-    private val total = Array(height) { IntArray(width) { 0 } }
+    private val total = Array(width) { IntArray(height) { 0 } }
 
     fun printArray() {
         for (i in 0 until total.size) {

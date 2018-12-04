@@ -18,9 +18,8 @@ class Exercise3(input: String) {
         }
         val largestWidth = largestWidth(claims) ?: 0
         val largestHeight = largestHeight(claims) ?: 0
-        square = Square(largestWidth, largestHeight)
+        square = Square(largestHeight, largestWidth)
         claims.forEach {
-            println("Claim is $it")
             square.fillClaim(it)
         }
     }
@@ -47,5 +46,5 @@ class Exercise3(input: String) {
 fun main(args: Array<String>) {
     val exc3 = Exercise3("/input3.txt")
     println("The answer to the silver exercise is ${exc3.silverExercise()}")
-//    println("The answer to the gold exercise is ${exc3.goldExercise()}")
+    println("The answer to the gold exercise is ${exc3.goldExercise()}")
 }
