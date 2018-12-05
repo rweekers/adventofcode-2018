@@ -38,17 +38,28 @@ class Exercise4(input: String) {
     }
 
     fun silverExercise(): Int {
-        return sleeps.maxBy { it.value.size }.run { this!!.key * this.value.groupBy { it }.maxBy { it.value.size }?.key!! }
+        val guardId = sleeps.entries.maxBy { it.value.size }!!.key
+
+        val guardList = sleeps.entries.stream()
+                .reduce { acc, curr -> if (curr.value.size > acc.value.size) curr else acc }
+                .map { it.value }
+                .orElseThrow { RuntimeException("No guards found with sleep minutes") }
+        val minute = guardList.groupBy { it }
+                .maxBy { it.value.size }!!
+                .value[0]
+        return guardId * minute
     }
 
     fun goldExercise(): Int {
-        return sleeps.flatMap { it ->
+        val guardIdToMinutesAsleep = sleeps.flatMap { it ->
             it.value.map { minute ->
                 it.key to minute
             }
         }
-                .groupBy { it }.maxBy { it.value.size }?.key!!
-                .run { first * second }
+                .groupBy { it }.maxBy { it.value.size }!!
+                .key
+
+        return guardIdToMinutesAsleep.first * guardIdToMinutesAsleep.second
     }
 }
 
