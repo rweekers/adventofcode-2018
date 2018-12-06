@@ -43,7 +43,14 @@ class Exercise5(input: String) {
 }
 
 fun main(args: Array<String>) {
-    val exc5 = Exercise5("/input5.txt")
+    // check Erik's program (900 ms)
+    val start = System.currentTimeMillis()
+    val exc5Erik = Exercise5("/input5-2.txt")
+    println("The answer to the input of Erik is ${exc5Erik.silverExercise()}")
+    val end = System.currentTimeMillis()
+    println("Processing took ${end - start}")
+
+    val exc5 = Exercise5("input5.txt")
     println("The answer to the silver exercise is ${exc5.silverExercise()}")
     println("The answer to the gold exercise is ${exc5.goldExercise()}")
 }
