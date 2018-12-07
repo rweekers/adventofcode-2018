@@ -8,12 +8,12 @@ class Exercise6Test {
     @Test
     fun `exercise 6 silver test`() {
         val exc6 = Exercise6("/six/test6.txt")
-        assertThat(exc6.silverExercise()).isEqualTo(0)
+        assertThat(exc6.silverExercise()).isEqualTo(17)
     }
 
     @Test
     fun `exercise 6 gold test`() {
         val exc6 = Exercise6("/six/test6.txt")
-        assertThat(exc6.goldExercise()).isEqualTo(0)
+        assertThat(exc6.goldExercise(32)).isEqualTo(16)
     }
 }

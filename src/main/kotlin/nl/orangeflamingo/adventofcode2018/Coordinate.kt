@@ -1,3 +1,10 @@
 package nl.orangeflamingo.adventofcode2018
 
-data class Coordinate(val x: Int, val y: Int)
+import kotlin.math.absoluteValue
+
+data class Coordinate(val x: Int, val y: Int) {
+
+    fun manhattanDistance(coordinate: Coordinate): Int {
+        return (this.x - coordinate.x).absoluteValue + (this.y - coordinate.y).absoluteValue
+    }
+}
