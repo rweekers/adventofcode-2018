@@ -21,9 +21,9 @@ class Exercise8(input: String) {
         var numberOfMetaData = numberList[position++]
 
         while (numberOfSubNodes-- > 0) {
-            val (child, newPos) = parseNodes(numberList, position)
+            val (subNode, newPos) = parseNodes(numberList, position)
             position = newPos
-            node.addSubNode(child)
+            node.addSubNode(subNode)
         }
 
         while (numberOfMetaData-- > 0) {
