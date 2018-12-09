@@ -16,7 +16,7 @@ class Exercise9(private val circularList: CircularList = CircularList()) {
         return scores.max()!!
     }
 
-    data class CircularList(val theList: ArrayDeque<Int> = ArrayDeque()) {
+    data class CircularList(val theList: LinkedList<Int> = LinkedList()) {
         init {
             theList.addFirst(0)
         }
@@ -40,7 +40,8 @@ class Exercise9(private val circularList: CircularList = CircularList()) {
 }
 
 fun main(args: Array<String>) {
-    val exc9 = Exercise9()
-    println("The answer to the silver exercise is ${exc9.exercise(71975, 416)}")
-    println("The answer to the gold exercise is ${exc9.exercise(71975 * 100, 416)}")
+    val exc9Silver = Exercise9()
+    println("The answer to the silver exercise is ${exc9Silver.exercise(71975, 416)}")
+    val exc9Gold = Exercise9()
+    println("The answer to the gold exercise is ${exc9Gold.exercise(71975 * 100, 416)}")
 }
